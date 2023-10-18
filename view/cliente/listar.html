@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Clientes</title>
+</head>
+<body>
+    <h1>Lista de Clientes</h1>
+
+    <a href="adicionar" role="button">Adicionar</a>
+
+    <table>
+        <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Data Criação</th>
+        </tr>
+        <?php foreach ($clientes as $cliente): ?>
+            <tr>
+                <td>
+                    <a href="editar/<?= $cliente['cliente_id'] ?>" role="button">Editar</a>
+                    <a href="deletar/<?= $cliente['cliente_id'] ?>" role="button">Deletar</a>
+                </td>
+                <td><?= $cliente['cliente_id'] ?></td>
+                <td><?= $cliente['cliente_nome'] ?></td>
+                <td><?= $cliente['created_at'] ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+
+    <a href="../home" role="button">Voltar para a Home</a>
+</body>
+</html>

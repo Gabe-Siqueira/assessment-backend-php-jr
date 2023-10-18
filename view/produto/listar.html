@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Produtos</title>
+</head>
+<body>
+    <h1>Lista de Produtos</h1>
+
+    <a href="adicionar" role="button">Adicionar</a>
+
+    <table>
+        <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Valor</th>
+            <th>Data Criação</th>
+        </tr>
+        <?php foreach ($produtos as $produto): ?>
+            <tr>
+                <td>
+                    <a href="editar/<?= $produto['produto_id'] ?>" role="button">Editar</a>
+                    <a href="deletar/<?= $produto['produto_id'] ?>" role="button">Deletar</a>
+                </td>
+                <td><?= $produto['produto_id'] ?></td>
+                <td><?= $produto['produto_nome'] ?></td>
+                <td><?= $produto['produto_valor'] ?></td>
+                <td><?= $produto['created_at'] ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+
+    <a href="../home" role="button">Voltar para a Home</a>
+</body>
+</html>
