@@ -10,7 +10,7 @@ error_reporting(E_ALL);
 $uri = $_SERVER['REQUEST_URI'];
 
 // Remove a base do caminho (se necessário)
-$base = '/php-mvc/'; // Altere para o caminho do seu projeto
+$base = '/php_mvc/'; // Altere para o caminho do seu projeto
 $uri = str_replace($base, '', $uri);
 
 // Quebra a URI em partes usando '/'
